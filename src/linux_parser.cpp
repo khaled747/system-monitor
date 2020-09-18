@@ -106,15 +106,8 @@ long LinuxParser::UpTime() {
 } 
 
 // TODO: Read and return the number of jiffies for the system
-long LinuxParser::Jiffies() { 
-  
-  vector<string> all_jiffies = LinuxParser::CpuUtilization();
-  float sum = 0;
-  for(string j : all_jiffies){
-    sum += std::stof(j);
-  }
-  return sum; 
-}
+long LinuxParser::Jiffies() { return 0; }
+
 
 // TODO: Read and return the number of active jiffies for a PID
 // REMOVE: [[maybe_unused]] once you define the function
@@ -154,10 +147,8 @@ long LinuxParser::ActiveJiffies() {
 
 // TODO: Read and return the number of idle jiffies for the system
 
-  long LinuxParser::IdleJiffies() { 
-  vector<string> all_jiffies = LinuxParser::CpuUtilization();
-  return std::stof(all_jiffies[3]); 
-}
+ long LinuxParser::IdleJiffies() { return 0; }
+
 
 // TODO: Read and return CPU utilization
 vector<string> LinuxParser::CpuUtilization() { 
